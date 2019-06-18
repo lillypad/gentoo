@@ -50,9 +50,6 @@ src_configure() {
 }
 
 src_install() {
-	dodoc docs/*.{txt,TXT}
-	dohtml docs/console*.{css,html}
-
 	cd "${CMAKE_BUILD_DIR}" || die
 	dogamesbin ${PN} || die
 
