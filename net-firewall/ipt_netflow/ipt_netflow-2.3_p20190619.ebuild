@@ -2,18 +2,18 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-inherit git-r3 linux-info linux-mod toolchain-funcs
+inherit linux-info linux-mod toolchain-funcs
 
 DESCRIPTION="Netflow iptables module"
 HOMEPAGE="
 	https://sourceforge.net/projects/ipt-netflow
 	https://github.com/aabc/ipt-netflow
 "
-EGIT_REPO_URI="https://github.com/aabc/ipt-netflow"
+SRC_URI="https://github.com/aabc/ipt-netflow/archive/0e5af37bf63681ff4ee95b98466ee26fa3e4df13.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 
 IUSE="debug natevents snmp"
 
@@ -38,6 +38,12 @@ pkg_setup() {
 	use debug && CONFIG_CHECK+=" ~DEBUG_FS"
 	use natevents && CONFIG_CHECK+=" NF_CONNTRACK_EVENTS NF_NAT_NEEDED"
 	linux-mod_pkg_setup
+}
+
+src_unpack() {
+	default
+
+	mv "${WORKDIR}"/${PN/_/-}-* "${WORKDIR}"/${P} || die
 }
 
 src_prepare() {
