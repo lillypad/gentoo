@@ -31,6 +31,24 @@
 
 #--- END OF EXAMPLES ---
 
+# Andreas K. Hüttel <dilfridge@gentoo.org> (27 Jun 2019)
+# Badly outdated, EAPI=2. Removal in 30days, ack'ed by
+# cynede for dotnet. Bug 685626.
+dev-dotnet/flickrnet-bin
+
+# Ulrich Müller <ulm@gentoo.org> (24 Jun 2019)
+# Byte-compilation with recent Emacs versions fails.
+# SRC_URI is gone. Last visible upstream activity in 2008.
+# Use app-emacs/flim as replacement.
+# Masked for removal in 30 days, bug #688596.
+app-emacs/limit
+virtual/emacs-flim
+
+# Jonas Stein <jstein@gentoo.org> (24 Jun 2019)
+# Source is broken. Upstream is dead since 2011.
+# Removal after 2019-08-01. (bug #688552)
+media-sound/sfc
+
 # David Seifert <soap@gentoo.org> (23 Jun 2019)
 # QA issues, fails tests, RWX sections, ignores CC/CFLAGS,
 # builds only static libs, fails with GCC 9.
