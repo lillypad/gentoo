@@ -22,7 +22,7 @@ else
 fi
 
 IUSE="bzip2 cxx debug fpx imagemagick jbig jpeg jpeg2k lcms lzma modules openmp
-	perl png postscript q16 q32 static-libs svg test threads tiff truetype
+	perl png postscript q16 q32 static-libs svg threads tiff truetype
 	webp wmf X zlib"
 
 RDEPEND="dev-libs/libltdl:0
@@ -50,9 +50,7 @@ RDEPEND="dev-libs/libltdl:0
 		x11-libs/libXext
 		)
 	zlib? ( sys-libs/zlib )"
-# corefonts are required because needed arial font (bug #588398).
-DEPEND="${RDEPEND}
-	test? ( media-fonts/corefonts )"
+DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
